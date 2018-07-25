@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title> | IllusoryY</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">IllusoryY</h1><a id="logo" href="/.">IllusoryY</a><p class="description">一切皆有法，如梦幻泡影</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta">Jul 25, 2018</div><div class="post-content"><h1 id="基本的bash-shell命令"><a href="#基本的bash-shell命令" class="headerlink" title="基本的bash shell命令"></a>基本的bash shell命令</h1><p>##文件和目录列表</p>
+<ul>
+<li>显示当前目录下的文件和目录– <strong>ls</strong></li>
+<li>区分文件和目录– <strong>ls -F</strong></li>
+<li>显示隐藏文件– <strong>ls -a</strong></li>
+<li>列出当前目录下包含的子目录中的文件，又名递归选项– <strong>ls -F -R</strong></li>
+<li>显示文件附加信息–<strong>ls -l</strong><blockquote>
+<p>-l会产生长列表格式的输出，包含了目录中每个文件的更多相关信息，第一行显示了在目录中包含的总块数，每行都包含下述信息：</p>
+</blockquote>
+</li>
+<li>文件目录，比如目录(d)、文件(-)、字符型文件(c)或块设备(b)</li>
+<li>文件的权限</li>
+<li>文件的硬链接总数</li>
+<li>文件属主的用户名</li>
+<li>文件属组的组名</li>
+<li>文件的大小(以字节为单位)</li>
+<li>文件的上次修改时间</li>
+<li><p>文件名或目录名</p>
+</li>
+<li><p>当指定特定文件的名称作为过滤器时，ls命令只会显示该文件的信息。问号(?)代表一个字符；星号(*)代表零个或多个字符</p>
+</li>
+</ul>
+<p>##处理文件</p>
+<ul>
+<li>创建空文件，创建你指定的文件，并将你的用户名作为文件的属主，文件大小为零– <strong>touch</strong></li>
+<li><p>将文件或目录从一个位置复制到另一个位置，–<strong>cp source destination</strong>源对象和目标对象</p>
+<blockquote>
+<p>1.若目标文件已存在，加上-i选项，强制询问是否需要覆盖已有文件<br>2.递归的复制整个目录的内容，加上-R选项<br>3.cp命令中也可使用通配符。制表键Tab自动补全可以允许你在输入文件名或目录名时按下制表键补全。连续按下制表键将展示所有相同开头的文件名</p>
+</blockquote>
+</li>
+<li><p>为文件创建符号链接（一个文件指向存放在虚拟目录结构中某个地方的另一个文件，这两个通过符号链接在一起的文件，彼此的内容并不相同），原始文件必须存在– <strong>ln -s</strong></p>
+</li>
+<li>创建硬链接，原始文件也必须存在，带有硬链接的文件共享inode编号，因为它们是同一个文件– <strong>ln</strong></li>
+<li>将文件和目录移动到另一个位置或重新命名– <strong>mv source destination</strong></li>
+<li>删除文件，加上-i命令参数提示你是不是要真的删除文件。要删除很多文件且不受提示符的打扰，可以加上-f选项强制删除 –<strong>rm</strong></li>
+</ul>
+<p>##处理目录</p>
+<ul>
+<li>创建目录；同时创建多个目录和子目录，需要加上-p选项– <strong>mkdir directoryname</strong></li>
+<li>删除目录；仅删除空目录– <strong>rmdir</strong></li>
+</ul>
+<p>##查看文件内容</p>
+<ul>
+<li>查看文件的类型– <strong>file</strong></li>
+<li>显示文本文件的所有数据；给所有的行加上行数，加上-n选项；给有文本的行加上行号，加上-b选项；不想让制表符出现，加上-T选项– <strong>cat</strong></li>
+<li>显示文本文件的内容，每页数据之后停下来– <strong>more</strong></li>
+<li>显示文本文件的内容，实现文本文件的前后翻动，还有一些高级搜索功能– <strong>less</strong></li>
+<li>显示文件最后几行的内容，默认情况下，显示文件末尾10行；通过加入-n参数来修改所显示的行数；在其它进程使用该文件时查看文件内容，加上-f选项– <strong>tail</strong></li>
+<li>显示文件开头那些行的内容。默认情况下，显示文件前10行；通过加入-n参数来修改所显示的行数；– <strong>head</strong></li>
+</ul>
+</div><div class="tags"></div><div class="post-nav"><a class="next" href="/2018/02/11/hello-world/">Hello World</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/25/liunx基本命令学习一/">liunx基本命令学习一</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">IllusoryY.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
